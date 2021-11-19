@@ -1,0 +1,31 @@
+openapi: 3.0.1
+info:
+  title: "Product - Server Endpoints"
+  version: "1.0.0"
+  description: >-
+    Description
+servers:
+  - url: "http://localhost:5005"
+    description: "Local development server"
+
+paths:
+  /:
+    get:
+      tags:
+      - Server Information
+      summary: Health endpoint of Product Server
+      operationId: getHealth
+      description: >-
+        This URL can be used as an endpoint to run
+        health checks against. When the server is running
+        this will return 200.
+      responses:
+        200:
+          description: Up and running
+          content:
+            text/plain:
+              schema:
+                type: string
+                description: Welcome text of Product Server
+              example: >-
+                Hello from Product: 1.0.0
